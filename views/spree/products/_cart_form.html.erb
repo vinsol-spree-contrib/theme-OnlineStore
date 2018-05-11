@@ -11,7 +11,7 @@
               <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
                 <li class="radio">
                   <%= radio_button_tag "variant_id", variant.id, index == 0,
-                      'data-price' => variant.price_in(current_currency).money, 
+                      'data-price' => variant.price_in(current_currency).money,
                       'data-in-stock' => variant.can_supply?
                   %>
                   <%= label_tag "variant_id_#{ variant.id }", :class => "radio-label" do  %>
@@ -39,9 +39,11 @@
       <div data-hook="product_price" class="col-md-8">
         <div id="product-price">
           <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-6"><h4 class="product-section-title"><%= Spree.t(:price) %></h4></div>
+            <div class="col-md-4 col-sm-4 col-xs-6">
+              <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
+            </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
-              <span class="lead price selling" itemprop="price">
+              <span class="lead price selling" itemprop="price" content="<%= @product.price_in(current_currency).amount.to_d %>">
                 <%= display_price(@product) %>
               </span>
               <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
