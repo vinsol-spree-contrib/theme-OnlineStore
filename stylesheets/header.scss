@@ -54,6 +54,7 @@
     &::hover{
       color:$link-color;
     }
+
   }
   .dropdown-menu{
     @include border-radius(0px);
@@ -182,7 +183,7 @@
       }
     }
   }
-  
+
   #link-to-cart {
     position: absolute;
     top:-56px;
@@ -200,6 +201,10 @@
       display: none;
       &.header-nav-holder {
         display:block;
+      }
+      &#link-to-cart{
+        width:200px;
+        text-align: center;
       }
     }
   }
@@ -268,7 +273,7 @@ li.dropdown:hover > .dropdown-menu {
 }
 
 @media screen and (max-width:767px){
-  #spree-header{  
+  #spree-header{
     #logo{
       position: absolute;
       top: 50px;
@@ -277,9 +282,10 @@ li.dropdown:hover > .dropdown-menu {
       margin-bottom: 0;
       margin-left: -70px;
       padding: 0;
-      z-index: 3;
+      z-index: 999;
       img{
         max-height: 43px;
+        max-width: none;
       }
     }
     .navbar-inverse{
@@ -305,6 +311,18 @@ li.dropdown:hover > .dropdown-menu {
       }
     }
   }
+  .right-top-head{
+    padding:0;
+    a{
+      &.my-account-text{
+        font-size:0;
+        .fa{
+          font-size: 14px;
+        }
+      }
+  }
+  }
+
 }
 
 
