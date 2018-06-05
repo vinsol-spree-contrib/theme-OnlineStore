@@ -475,8 +475,16 @@ abbr[title]{
   }
 }
 label#use_billing{
-  margin-left: 15px;
   display: block;;
   clear: both;
 
+}
+@media screen and (max-width: 767px){
+  [type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after{
+    font-size: 0.7em;
+    top:5px;
+  }
+}
+.order-number a{
+  color:$link-color;
 }
